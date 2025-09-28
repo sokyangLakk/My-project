@@ -32,6 +32,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
+
 }
 
 /* Logo */
@@ -79,15 +80,11 @@ header {
 /* Section */
 .home-page {
   padding: 0 40px;
-  /* background: #fff; */
-  /* width: 100%;
-  height: 100vh; */
   background: url(/img/360_F_894997823_Mm4oe3rvQRaWSdfOvgBAVcKaRhabN5wk.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* display: flex;
-  flex-direction: column; */
+
 
 }
 
@@ -96,11 +93,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* ប្ដូរពី center ទៅ flex-start ដើម្បីឲ្យវាចាប់ផ្តើមជិតគ្នា */
+
   gap: 20px;
-  /* បន្ថយចន្លោះពី 40px ទៅ 20px */
+
   padding: 0 40px;
-  /* បន្ថែម padding បើចង់ឲ្យកៀនខាងឆ្វេង/ស្តាំ */
+
 }
 
 /* Text content */
@@ -126,48 +123,49 @@ header {
 .home2 .btn {
   display: inline-block;
   padding: 16px 36px;
-  /* បន្ថែម padding ឲ្យធំជាង */
+
   font-size: 18px;
-  /* ពង្រីកអក្សរ */
+
   color: #fff;
   background: #e63946;
   border-radius: 40px;
-  /* ឲ្យរង្វង់កាន់តែស្រស់ */
+
   text-decoration: none;
   transition: 0.3s;
   box-shadow: 0 6px 14px rgba(218, 79, 79, 0.3);
-  /* ស្រមោលធំជាង */
+
 }
 
 .home2 .btn:hover {
   background: #b02a37;
   transform: translateY(-3px);
-  /* ឲ្យលោតឡើងបន្តិចពេល hover */
+
   box-shadow: 0 6px 15px rgba(218, 175, 175, 0.3);
-  /* ស្រមោលខ្លាំងជាង */
+
 }
 
 /* <!-- <------------------------------------Section2---------------------------------> */
 .about-page {
-  padding: 50px 40px;
+  padding: 10px 120px;
   text-align: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Heading centered at top */
 .about-heading {
   font-size: 3em;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 /* Container for picture + text */
 .About1 {
   display: flex;
   align-items: center;
-  /* vertically center picture & text */
   justify-content: center;
-  gap: 40px;
+  /* gap: 40px; */
   flex-wrap: wrap;
-  /* responsive wrap */
 }
 
 /* Picture styling */
@@ -180,7 +178,7 @@ header {
 
 .picture img {
   width: 400px;
-  height: auto;
+  height: 500px;
   border-radius: 20px;
   object-fit: cover;
 }
@@ -190,31 +188,302 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   /* center text and icons */
 }
 
-/* Icons container */
-.icon-container {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  /* 3 icons per row */
-  gap: 10px 20px;
-
-  /* row-gap: 10px, column-gap:20px margin-top: 20px; */
-  justify-content: center;
+.About2 h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #e63946;
+  text-align: center;
+  margin: 30px 0;
+  line-height: 1.2;
+  font-family: 'Arial', sans-serif;
 }
 
 
 
-/* Icons without circle */
+
+.About2 p,
+.About2 h3 {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 20px;
+  margin-top: 20px;
+}
+
 .icon-circle {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 15px;
-  font-weight: bold;
+  padding: 12px 20px;
+  background-color: #ffe5e5;
   color: #e63946;
-  text-align: center;
-  background-color: transparent;
-  border: none;
+  font-weight: 600;
+  border-radius: 50px;
+  font-size: 16px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
+.icon-circle:hover {
+  transform: translateY(-3px);
+  /* slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* <!-- <------------------------------------1Menu page--------------------------------->
+    <!-- <------------------------------------Section3---------------------------------> *
+/* Menu Page Section */
+.Menu-page {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #f4f4f4; /* Light background for contrast */
+    font-family: 'Arial', sans-serif; /* Modern font */
+}
+
+/* Menu Heading and Description */
+.about-menu {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.Menu-page p {
+    font-size: rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Menu Container */
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* Horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+    gap: 20px; /* Space between items */
+    padding: 20px;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    scroll-snap-type: x mandatory; /* Snap scrolling */
+    max-width: 100%; /* Ensure container fits viewport */
+}
+
+/* Scrollbar Styling */
+.menu-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.menu-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.menu-container::-webkit-scrollbar-thumb:hover {
+    background: #aaa; /* Slightly darker on hover */
+}
+
+/* Menu Item */
+.menu-item {
+    flex: 0 0 auto; /* Fixed size, no shrinking/growing */
+    width: 220px; /* Fixed width */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    scroll-snap-align: start; /* Snap to start of item */
+}
+
+/* Hover Effect for Menu Item */
+.menu-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Menu Item Image */
+.menu-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Smooth zoom on hover */
+}
+
+.menu-item img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Menu Item Heading */
+.menu-item h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Menu Item Price */
+.menu-item p {
+    color: #e63946;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Buy Now Button */
+.menu-item button {
+    background: #e63946;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover and Focus */
+.menu-item button:hover {
+    background: #c72c36;
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+.menu-item button:focus {
+    outline: 2px solid #e63946; /* Accessibility focus outline */
+    outline-offset: 2px;
+}
+
+/* Navigation Arrows */
+.menu-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.menu-controls button {
+    background: #e63946;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50%; /* Circular buttons */
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-controls button:hover {
+    background: #c72c36;
+    transform: scale(1.1);
+}
+
+.menu-controls button:focus {
+    outline: 2px solid #e63946;
+    outline-offset: 2px;
+}
+/* 
+  <!-- <------------------------------------Section4 Drinks---------------------------------> */
+/* Section */
+.page {
+  padding: 50px 20px;
+  text-align: center;
+  background: #fff;
+  min-height: 100vh;
+}
+
+.about {
+  font-size: 36px;
+  color: #e63946;
+  margin-bottom: 30px;
+}
+
+/* Flex Container */
+.menu-1 {
+  display: flex;
+  flex-wrap: wrap;        /* អនុញ្ញាតឲ្យចុះជួរថ្មី */
+  justify-content: center;
+  gap: 20px;              /* ចន្លោះរវាង item */
+}
+
+/* Flex Item */
+.menu-box {
+  flex: 0 1 calc(25% - 20px); /* 4 per row */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+.menu-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Image */
+.menu-box img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.menu-box h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.menu-box p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Button */
+.menu-box button {
+  padding: 8px 16px;
+  background: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-box button:hover {
+  background: #b71c1c;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .menu-box {
+    flex: 0 1 calc(33.33% - 20px); /* 3 per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-box {
+    flex: 0 1 calc(50% - 20px); /* 2 per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-box {
+    flex: 0 1 100%; /* 1 per row */
+  }
+}
+  /* <!-- <------------------------------------Section4 Drinks---------------------------------> */ */
