@@ -391,8 +391,9 @@ header {
     outline: 2px solid #e63946;
     outline-offset: 2px;
 }
-/* 
-  <!-- <------------------------------------Section4 Drinks---------------------------------> */
+
+
+  /* <!-- <------------------------------------Section4 Drinks--------------------------------->  */
 /* Section */
 .page {
   padding: 50px 20px;
@@ -410,14 +411,14 @@ header {
 /* Flex Container */
 .menu-1 {
   display: flex;
-  flex-wrap: wrap;        /* អនុញ្ញាតឲ្យចុះជួរថ្មី */
+  flex-wrap: wrap;        
   justify-content: center;
-  gap: 20px;              /* ចន្លោះរវាង item */
+  gap: 20px;            
 }
 
 /* Flex Item */
 .menu-box {
-  flex: 0 1 calc(25% - 20px); /* 4 per row */
+  flex: 0 1 calc(25% - 20px); 
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -486,4 +487,53 @@ header {
     flex: 0 1 100%; /* 1 per row */
   }
 }
-  /* <!-- <------------------------------------Section4 Drinks---------------------------------> */ */
+    /* <!-- <------------------------------------3Review page---------------------------------> */
+.Review-page{
+  width: 100%;
+  height: 100vh;
+  padding: 70px 0;
+  background-color: #6e69691a;
+}
+.Review-page h3{
+  font-size: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Review-page h3 span{
+  margin-left: 15px;
+  color: red;
+}
+
+.Review-page .Review-box{
+  width: 95%;
+  margin: 50px auto;
+  display: flex;
+}
+.Review-page .Review-box .review-card{
+  width: 380px;
+  /* height: 485px; */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.411);
+  border-radius: 8px;
+  padding: 8px 20px;
+  margin: 0 8px;
+}
+.Review-page .Review-box .review-card .review-profile{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.3s;
+}
+.Review-page .Review-box .review-card:hover .review-profile{
+  transform: translateY(-60px);
+}
+.Review-page .Review-box .review-card .review-profile  img{
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 5px solid #ccc;
+}
