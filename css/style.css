@@ -5,12 +5,10 @@
   box-sizing: border-box;
 }
 
-/* Body */
 body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Header */
 header {
   background: rgba(255, 255, 255, 0.8);
   position: fixed;
@@ -23,7 +21,6 @@ header {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar */
 .navbar {
   max-width: 1200px;
   margin: 0 auto;
@@ -32,10 +29,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -52,7 +47,6 @@ header {
   color: #80200a;
 }
 
-/* Nav Links */
 .nav-links {
   display: flex;
   gap: 25px;
@@ -65,22 +59,69 @@ header {
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s ease;
-  font-size: bold;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: #e63946;
-  /* highlight color */
   border-bottom: 2px solid #e63946;
   padding-bottom: 4px;
 }
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 90px;
+    right: -100%;
+    height: calc(100vh - 90px);
+    width: 200px;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 20px;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 998;
+  }
+
+  /* Show menu when checkbox is checked */
+  .menu-toggle:checked+.hamburger+.nav-links {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
 
 /* <!-- <------------------------------------Section1---------------------------------> */
 /* Section */
 .home-page {
   padding: 0 40px;
-  background: url(/img/360_F_894997823_Mm4oe3rvQRaWSdfOvgBAVcKaRhabN5wk.jpg);
+  background: url(/img/national-fast-food-day.avif);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -117,7 +158,7 @@ header {
 
 .home2 {
   text-align: center;
-  /* អក្សរ និង button ទៅកណ្តាល */
+
 }
 
 .home2 .btn {
@@ -146,17 +187,40 @@ header {
 
 /* <!-- <------------------------------------Section2---------------------------------> */
 .about-page {
-  padding: 10px 120px;
-  text-align: center;
-  height: 100vh;
-  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-/* Heading centered at top */
-.about-heading {
-  font-size: 3em;
-  margin-bottom: 20px;
-  padding: 10px;
+/* ---------- Section Title ---------- */
+.about-page h1 {
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.about-page h1 span {
+  color: red;
+  font-family: "MV Boli", cursive;
+  position: relative;
+  display: inline-block;
+}
+
+.about-page h1 span::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
 }
 
 /* Container for picture + text */
@@ -164,8 +228,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* gap: 40px; */
   flex-wrap: wrap;
+  gap: 40px;
 }
 
 /* Picture styling */
@@ -177,23 +241,23 @@ header {
 }
 
 .picture img {
-  width: 400px;
-  height: 500px;
+  width: 500px;
+  height: 400px;
   border-radius: 20px;
   object-fit: cover;
 }
 
+/* Text container */
 .About2 {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  /* center text and icons */
 }
 
 .About2 h3 {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   color: #e63946;
   text-align: center;
@@ -202,16 +266,13 @@ header {
   font-family: 'Arial', sans-serif;
 }
 
-
-
-
 .About2 p,
 .About2 h3 {
   margin: 0.5rem 0;
   width: 100%;
 }
 
-
+/* Icon container */
 .icon-container {
   display: flex;
   flex-wrap: wrap;
@@ -236,167 +297,231 @@ header {
 
 .icon-circle:hover {
   transform: translateY(-3px);
-  /* slight lift on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------------- Responsive ---------------- */
+@media screen and (max-width: 992px) {
+  .picture img {
+    width: 400px;
+    height: 300px;
+  }
+
+  .About2 h3 {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .About1 {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .picture img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .About2 h3 {
+    font-size: 24px;
+  }
+
+  .about-page h1 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-page h1 {
+    font-size: 32px;
+  }
+
+  .About2 h3 {
+    font-size: 20px;
+  }
+
+  .icon-circle {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
 }
 
 /* <!-- <------------------------------------1Menu page--------------------------------->
     <!-- <------------------------------------Section3---------------------------------> *
 /* Menu Page Section */
 .Menu-page {
-    padding: 30px 20px;
-    text-align: center;
-    background-color: #f4f4f4; /* Light background for contrast */
-    font-family: 'Arial', sans-serif; /* Modern font */
+  text-align: center;
+  background-color: #f4f4f4;
+  font-family: 'Arial', sans-serif;
+
 }
 
 /* Menu Heading and Description */
 .about-menu {
-    font-size: 3rem;
-    color: #333;
-    margin-bottom: 15px;
-    font-weight: 700;
+  font-size: 3rem;
+  color: rgb(219, 18, 18);
+  font-weight: 700px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.about-menu::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  bottom: -5px;
+  left: 0;
 }
 
 .Menu-page p {
-    font-size: rem;
-    color: #666;
-    margin-bottom: 20px;
+  font-size: rem;
+  color: #666;
+  margin-bottom: 20px;
 }
 
 /* Menu Container */
 .menu-container {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto; /* Horizontal scrolling */
-    white-space: nowrap; /* Prevent wrapping */
-    gap: 20px; /* Space between items */
-    padding: 20px;
-    scroll-behavior: smooth; /* Smooth scrolling */
-    scroll-snap-type: x mandatory; /* Snap scrolling */
-    max-width: 100%; /* Ensure container fits viewport */
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  max-width: 100%;
 }
 
 /* Scrollbar Styling */
 .menu-container::-webkit-scrollbar {
-    height: 8px;
+  height: 8px;
 }
 
 .menu-container::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
+  background: #db2626;
+  border-radius: 4px;
 }
 
 .menu-container::-webkit-scrollbar-thumb:hover {
-    background: #aaa; /* Slightly darker on hover */
+  background: #aaa;
 }
 
 /* Menu Item */
 .menu-item {
-    flex: 0 0 auto; /* Fixed size, no shrinking/growing */
-    width: 220px; /* Fixed width */
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
-    text-align: center;
-    padding: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-    scroll-snap-align: start; /* Snap to start of item */
+  flex: 0 0 auto;
+  width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
+
 }
 
 /* Hover Effect for Menu Item */
 .menu-item:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+
 }
 
 /* Menu Item Image */
 .menu-item img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease; /* Smooth zoom on hover */
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+
 }
 
 .menu-item img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+  transform: scale(1.05);
+
 }
 
 /* Menu Item Heading */
 .menu-item h3 {
-    margin: 10px 0 5px;
-    font-size: 18px;
-    color: #333;
-    font-weight: 600;
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
 }
 
 /* Menu Item Price */
 .menu-item p {
-    color: #e63946;
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+  color: #e63946;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 
 /* Buy Now Button */
 .menu-item button {
-    background: #e63946;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Button Hover and Focus */
 .menu-item button:hover {
-    background: #c72c36;
-    transform: scale(1.05); /* Slight scale on hover */
+  background: #c72c36;
+  transform: scale(1.05);
+
 }
 
 .menu-item button:focus {
-    outline: 2px solid #e63946; /* Accessibility focus outline */
-    outline-offset: 2px;
+  outline: 2px solid #e63946;
+  outline-offset: 2px;
 }
 
 /* Navigation Arrows */
 .menu-controls {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 .menu-controls button {
-    background: #e63946;
-    color: #fff;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 50%; /* Circular buttons */
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .menu-controls button:hover {
-    background: #c72c36;
-    transform: scale(1.1);
+  background: #c72c36;
+  transform: scale(1.1);
 }
 
 .menu-controls button:focus {
-    outline: 2px solid #e63946;
-    outline-offset: 2px;
+  outline: 2px solid #e63946;
+  outline-offset: 2px;
 }
 
 
-  /* <!-- <------------------------------------Section4 Drinks--------------------------------->  */
+/* <!-- <------------------------------------Section4 Drinks--------------------------------->  */
 /* Section */
 .page {
-  padding: 50px 20px;
+  padding: 10px 20px;
   text-align: center;
   background: #fff;
   min-height: 100vh;
@@ -411,17 +536,17 @@ header {
 /* Flex Container */
 .menu-1 {
   display: flex;
-  flex-wrap: wrap;        
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;            
+  gap: 20px;
 }
 
 /* Flex Item */
 .menu-box {
-  flex: 0 1 calc(25% - 20px); 
+  flex: 0 1 calc(25% - 20px);
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 15px;
   text-align: center;
   transition: transform 0.3s ease;
@@ -472,46 +597,70 @@ header {
 /* Responsive */
 @media (max-width: 992px) {
   .menu-box {
-    flex: 0 1 calc(33.33% - 20px); /* 3 per row */
+    flex: 0 1 calc(33.33% - 20px);
+    /* 3 per row */
   }
 }
 
 @media (max-width: 768px) {
   .menu-box {
-    flex: 0 1 calc(50% - 20px); /* 2 per row */
+    flex: 0 1 calc(50% - 20px);
+    /* 2 per row */
   }
 }
 
 @media (max-width: 480px) {
   .menu-box {
-    flex: 0 1 100%; /* 1 per row */
+    flex: 0 1 100%;
+    /* 1 per row */
   }
 }
-    /* <!-- <------------------------------------3Review page---------------------------------> */
-.Review-page{
-  width: 100%;
-  height: 100vh;
-  padding: 70px 0;
-  background-color: #6e69691a;
-}
-.Review-page h3{
-  font-size: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+/* <!-- <------------------------------------3Review page---------------------------------> */
+.Review-page {
+  font-family: 'Arial', sans-serif;
+  padding: 10px 10px;
 }
 
-.Review-page h3 span{
+/* ---------- Section Title ---------- */
+.Review-page h3 {
+  font-size: 55px;
+  font-family: "MV Boli", cursive;
+  /* set font */
+  color: #333;
+  text-align: center;
+
+}
+
+.Review-page h3 span {
   margin-left: 15px;
   color: red;
+  position: relative;
+  /* for underline */
+  display: inline-block;
+  /* pseudo-element alignment */
 }
 
-.Review-page .Review-box{
+/* underline only for the span (Review) */
+.Review-page h3 span::after {
+  content: '';
+  width: 100%;
+  /* matches the span width */
+  height: 2px;
+  background-color: red;
+  position: absolute;
+  bottom: -5px;
+  /* space below text */
+  left: 0;
+}
+
+.Review-page .Review-box {
   width: 95%;
   margin: 50px auto;
   display: flex;
 }
-.Review-page .Review-box .review-card{
+
+.Review-page .Review-box .review-card {
   width: 380px;
   /* height: 485px; */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.411);
@@ -519,21 +668,461 @@ header {
   padding: 8px 20px;
   margin: 0 8px;
 }
-.Review-page .Review-box .review-card .review-profile{
+
+.Review-page .Review-box .review-card .review-profile {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   transition: 0.3s;
 }
-.Review-page .Review-box .review-card:hover .review-profile{
-  transform: translateY(-60px);
+
+.Review-page .Review-box .review-card:hover .review-profile {
+  transform: translateY(-40px);
 }
-.Review-page .Review-box .review-card .review-profile  img{
+
+.Review-page .Review-box .review-card .review-profile img {
   width: 180px;
   height: 180px;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
   border: 5px solid #ccc;
+}
+
+
+/* <!-- <------------------------------------Special Menu---------------------------------> */
+/* ---------- Special Menu Section ---------- */
+.Special-menu {
+  width: 100%;
+  padding: 20px 10px;
+  background: #f9f9f9;
+}
+
+/* ---------- Section Title ---------- */
+.Special-menu h1 {
+  font-size: 55px;
+  text-align: center;
+  /* fix jumping issue */
+  margin-bottom: 40px;
+  position: relative;
+  /* for pseudo-element */
+  font-family: Arial, sans-serif;
+}
+
+.Special-menu h1 span {
+  margin-left: 15px;
+  color: red;
+  font-family: "mv boli", cursive;
+  position: relative;
+  /* for pseudo-element */
+}
+
+.Special-menu h1 span::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.Review-page {
+  width: 100%;
+  height: 100vh;
+  padding: 70px 0;
+  background-color: #6e69691a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ---------- Special Box Flex Container ---------- */
+.Special-menu .special-box {
+  width: 95%;
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+
+
+/* ---------- Special Item Box ---------- */
+.Special-menu .special-box .special-img {
+  position: relative;
+  flex: 1 1 calc(25% - 20px);
+  /* 4 columns */
+  max-width: calc(25% - 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.Special-menu .special-box .special-img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Image ---------- */
+.Special-menu .special-box .special-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: 0.3s;
+}
+
+.Special-menu .special-box .special-img:hover img {
+  opacity: 0.4;
+  transform: scale(1.05);
+}
+
+/* ---------- Title ---------- */
+.Special-menu .special-box .special-img h3 {
+  position: absolute;
+  font-size: 28px;
+  top: 15%;
+  color: red;
+  font-family: Arial, sans-serif;
+  z-index: 5;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.Special-menu .special-box .special-img:hover h3 {
+  opacity: 1;
+}
+
+/* ---------- Description ---------- */
+.Special-menu .special-box .special-img p {
+  position: absolute;
+  width: 80%;
+  bottom: 25%;
+  text-align: center;
+  color: white;
+  line-height: 22px;
+  opacity: 0;
+  z-index: 5;
+  transition: 0.5s;
+  font-size: 14px;
+}
+
+.Special-menu .special-box .special-img:hover p {
+  opacity: 1;
+}
+
+/* ---------- Button ---------- */
+.Special-menu .special-box .special-img .special-btn {
+  position: absolute;
+  bottom: 10%;
+  color: #fff;
+  background: red;
+  padding: 8px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(45px);
+  z-index: 5;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.Special-menu .special-box .special-img:hover .special-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive for Special Menu ---------- */
+@media (max-width: 1200px) {
+
+  /* Reduce columns to 3 */
+  .Special-menu .special-box .special-img {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 992px) {
+
+  /* Reduce columns to 2 */
+  .Special-menu .special-box .special-img {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+
+  /* Stack items vertically */
+  .Special-menu .special-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .Special-menu .special-box .special-img {
+    flex: 1 1 90%;
+    max-width: 90%;
+  }
+
+  /* Adjust text sizes for smaller screens */
+  .Special-menu .special-box .special-img h3 {
+    font-size: 22px;
+    top: 10%;
+  }
+
+  .Special-menu .special-box .special-img p {
+    font-size: 12px;
+    bottom: 20%;
+  }
+
+  .Special-menu .special-box .special-img .special-btn {
+    padding: 6px 18px;
+    font-size: 14px;
+    bottom: 8%;
+  }
+}
+
+
+
+
+/* <!-- <------------------------------------Contact page--------------------------------> */
+.Contact-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- Section Title ---------- */
+.Contact-page h1 {
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.Contact-page h1 span {
+  color: red;
+  font-family: "MV Boli", cursive;
+  position: relative;
+  display: inline-block;
+  /* allow underline alignment */
+}
+
+.Contact-page h1 span::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+
+.Contact-page .order-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+.order-img {
+  width: 500px;
+  max-width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Modern Form */
+.modern-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  font-family: Arial, sans-serif;
+}
+
+.input-group {
+  flex: 1 1 45%;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 12px;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: #fdfdfd;
+  transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: red;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
+}
+
+.input-group textarea {
+  flex: 1 1 100%;
+  resize: none;
+}
+
+.order_btn {
+  flex: 1 1 100%;
+  padding: 2px 10px;
+  background: red;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.order_btn:hover {
+  background: rgb(235, 61, 61);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 650px) {
+  .input-group {
+    flex: 1 1 100%;
+  }
+}
+
+
+/* <!-- <------------------------------------Footer---------------------------------> */
+footer {
+  width: 100%;
+  padding: 30px 0 0 20px;
+  background: #ee20203b;
+}
+
+footer .footer_main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+footer .footer_main .footer_tag {
+  text-align: center;
+
+}
+
+footer .footer_main .footer_tag h2 {
+  color: black;
+  margin-bottom: 25px;
+  font-size: 30px;
+}
+
+footer .footer_main .footer_tag p {
+  margin: 10px 0;
+
+}
+
+footer .footer_main .footer_tag i {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+footer .footer_main .footer_tag i:hover {
+  color: red;
+}
+
+footer .end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+
+}
+
+footer .end span {
+  color: red;
+  margin-left: 10px;
+}
+
+.link li a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.829);
+  font-weight: bold;
+
+}
+
+.link li {
+  list-style: none;
+}
+
+/* ---------------- Responsive ---------------- */
+@media screen and (max-width: 1200px) {
+  footer .footer_main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer .footer_main {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  footer .footer_main {
+    grid-template-columns: 1fr;
+    /* stack all columns vertically */
+    text-align: center;
+  }
+
+  footer .footer_main .footer_tag h2 {
+    font-size: 24px;
+  }
+
+  footer .footer_main .footer_tag p,
+  .link li a {
+    font-size: 14px;
+  }
+
+  footer .end {
+    flex-direction: column;
+    gap: 5px;
+  }
 }
